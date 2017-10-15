@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var people: [Person] = [Person()]
     
@@ -26,38 +26,17 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         navigationItem.title = "Hallo"
         
-        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
-        lpgr.minimumPressDuration = 0.5
-        lpgr.delaysTouchesBegan = true
-        lpgr.delegate = self
-        collectionView?.addGestureRecognizer(lpgr)
-        
         
     }
     
-    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
-        if gestureReconizer.state != UIGestureRecognizerState.began {
-            return
-        }
-        
-        let p = gestureReconizer.location(in: self.collectionView)
-        let indexPath = self.collectionView?.indexPathForItem(at: p)
-        
-        if let index = indexPath {
-            _ = self.collectionView?.cellForItem(at: index)
-            // do stuff with your cell, for example print the indexPath
-            print("Row: \(index.row)")
-        } else {
-            print("Could not find index path")
-        }
-    }
     
-    func showListController(person: Person){
+    func showListController(person: Person, index: Int){
         
         let layout = UICollectionViewFlowLayout()
         
         let listViewController = ListController(collectionViewLayout: layout)
         listViewController.personSelected = person
+        listViewController.indexPersonSelected = index
         navigationController?.pushViewController(listViewController, animated: true)
     }
     
@@ -85,15 +64,9 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        showListController(person: people[indexPath.item])
-        
-//        if let other = appCategory?.apps?[indexPath.item] {
-//            featuredAppController?.showAppDetailForApp(app: app)
-//        }
+        showListController(person: people[indexPath.item], index: indexPath.item)
         
     }
-    
-    
 
 }
 

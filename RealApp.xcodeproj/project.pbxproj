@@ -18,6 +18,8 @@
 		ED35F0291F6EC57000FA68A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F0281F6EC57000FA68A5 /* Extensions.swift */; };
 		ED88D32E1F93C00600FC4547 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88D32D1F93C00600FC4547 /* SeedData.swift */; };
 		EDAFFBE11F93D68100161B00 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE01F93D68100161B00 /* ListController.swift */; };
+		EDAFFBE31F93F7D200161B00 /* DigitalSelfController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */; };
+		EDAFFBE51F93F92800161B00 /* DigitalSelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		ED35F0281F6EC57000FA68A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ED88D32D1F93C00600FC4547 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
 		EDAFFBE01F93D68100161B00 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
+		EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSelfController.swift; sourceTree = "<group>"; };
+		EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSelfCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				ED35F0281F6EC57000FA68A5 /* Extensions.swift */,
 				ED88D32D1F93C00600FC4547 /* SeedData.swift */,
 				EDAFFBE01F93D68100161B00 /* ListController.swift */,
+				EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */,
+				EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */,
 			);
 			path = RealApp;
 			sourceTree = "<group>";
@@ -154,10 +160,12 @@
 				ED35F0251F6EC1F600FA68A5 /* PersonCell.swift in Sources */,
 				EDAFFBE11F93D68100161B00 /* ListController.swift in Sources */,
 				ED35F00E1F6EBA9F00FA68A5 /* HomeController.swift in Sources */,
+				EDAFFBE31F93F7D200161B00 /* DigitalSelfController.swift in Sources */,
 				ED35F00C1F6EBA9F00FA68A5 /* AppDelegate.swift in Sources */,
 				ED35F0291F6EC57000FA68A5 /* Extensions.swift in Sources */,
 				ED35F0231F6EBF4F00FA68A5 /* Other.swift in Sources */,
 				ED35F0271F6EC2B700FA68A5 /* BaseCell.swift in Sources */,
+				EDAFFBE51F93F92800161B00 /* DigitalSelfCell.swift in Sources */,
 				ED35F0211F6EBE9300FA68A5 /* Person.swift in Sources */,
 				ED35F0141F6EBA9F00FA68A5 /* RealApp.xcdatamodeld in Sources */,
 				ED88D32E1F93C00600FC4547 /* SeedData.swift in Sources */,

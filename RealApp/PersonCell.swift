@@ -23,6 +23,19 @@ class PersonCell:BaseCell {
         }
     }
     
+    var isFriend: Bool? {
+        didSet {
+            if let friend = isFriend {
+                if friend {
+                    otherName.backgroundColor = .yellow
+                }
+                else {
+                    otherName.backgroundColor = .blue
+                }
+            }
+        }
+    }
+    
     var otherImage:UIImageView = {
         
         let imageView = UIImageView()

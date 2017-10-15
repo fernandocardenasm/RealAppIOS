@@ -10,21 +10,28 @@ import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
     
-    let otherCellId = "otherCellId"
+    var people: [Person] = [Person()]
+    
+    let personCellId = "personCellId"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        people = SeedData.seedData()
+        
         collectionView?.backgroundColor = .white
         
-        collectionView?.register(OtherCell.self, forCellWithReuseIdentifier: otherCellId)
+        collectionView?.register(PersonCell.self, forCellWithReuseIdentifier: personCellId)
+        
+        navigationItem.title = "Hallo"
         
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
         lpgr.minimumPressDuration = 0.5
         lpgr.delaysTouchesBegan = true
         lpgr.delegate = self
         collectionView?.addGestureRecognizer(lpgr)
+        
         
     }
     
@@ -45,14 +52,25 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     
+    func showListController(person: Person){
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        let listViewController = ListController(collectionViewLayout: layout)
+        listViewController.personSelected = person
+        navigationController?.pushViewController(listViewController, animated: true)
+    }
+    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return people.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: otherCellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personCellId, for: indexPath) as! PersonCell
+                
+        cell.person = people[indexPath.item]
         
         return cell
     }
@@ -67,7 +85,11 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        print(indexPath.item)
+        showListController(person: people[indexPath.item])
+        
+//        if let other = appCategory?.apps?[indexPath.item] {
+//            featuredAppController?.showAppDetailForApp(app: app)
+//        }
         
     }
     

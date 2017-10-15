@@ -14,7 +14,14 @@ class Person {
     var userId:String = ""
     var userName:String = ""
     
-    var listOfOthers:[Other] = []
+    var imageProfile: String = ""
+    var imageSelf: String = ""
+    var imageFriend: String = ""
+    var listFriends: [String] = [""]
+    
+    
+    init() {
+    }
     
 }
 

@@ -8,8 +8,3 @@
 
 import Foundation
 
-class Other: Person {
-    
-    var isFriend:Bool = false
-    
-}

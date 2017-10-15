@@ -8,11 +8,25 @@
 
 import UIKit
 
-class OtherCell:BaseCell {
+class PersonCell:BaseCell {
     
-    let otherImage:UIView = {
+    var person: Person? {
+        didSet{
+            
+            if let profile = person?.imageProfile {
+                otherImage.image = UIImage(named: profile)
+            }
+            
+            if let name = person?.userName {
+                otherName.text = name
+            }
+        }
+    }
+    
+    var otherImage:UIImageView = {
         
-        let imageView = UIView()
+        let imageView = UIImageView()
+        
         imageView.backgroundColor = .yellow
         
         return imageView

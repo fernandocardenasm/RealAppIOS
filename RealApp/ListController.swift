@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ListController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
+class ListController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate{
     
     let personCellId = "personCellId"
     
@@ -29,13 +30,9 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         collectionView?.backgroundColor = .white
         
-        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
-        lpgr.minimumPressDuration = 0.8
-        lpgr.delaysTouchesBegan = true
-        lpgr.delegate = self
-        collectionView?.addGestureRecognizer(lpgr)
         
     }
+
     
     override func viewDidAppear(_ animated: Bool) {
         if let savedLogs = Helpers.loadLogs() {
@@ -44,37 +41,11 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         logs.append(LogData(date: Helpers.getCurrentDateTime(), stringData: "User Selected: \(personSelected?.userName ?? "None")")!)
         Helpers.saveLogs(logs: logs)
+        
     }
     
     func isAFriend(other: Person) -> Bool{
         return (personSelected?.listFriends.contains((other.userId)))!
-    }
-    
-    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
-        if gestureReconizer.state != UIGestureRecognizerState.began {
-            return
-        }
-        
-        let p = gestureReconizer.location(in: self.collectionView)
-        let indexPath = self.collectionView?.indexPathForItem(at: p)
-        
-        if let index = indexPath {
-            _ = self.collectionView?.cellForItem(at: index)
-            // do stuff with your cell, for example print the indexPath
-            print("Row: \(index.row)")
-            
-//            if isAFriend(other: people[(indexPath?.item)!]) {
-//                let i = personSelected?.listFriends.index(of: people[(indexPath?.item)!].userId)
-//                personSelected?.listFriends.remove(at: i!)
-//            }
-//            else {
-//                personSelected?.listFriends.append(people[(indexPath?.item)!].userId)
-//            }
-//            collectionView?.reloadData()
-            
-        } else {
-            print("Could not find index path")
-        }
     }
     
     func showDigitalSelfController(person: Person){
@@ -119,7 +90,25 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         showDigitalSelfController(person: people[indexPath.item])
+    }
+    
+    func createTextfile(){
+        let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.cachesDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!
+        let fileurl =  dir.appendingPathComponent("logM.txt")
         
+        let data = Helpers.getStringFromData(logs: logs).data(using: .utf8, allowLossyConversion: false)!
+        
+        
+        if FileManager.default.fileExists(atPath: fileurl.path) {
+            if let fileHandle = try? FileHandle(forUpdating: fileurl) {
+                fileHandle.seekToEndOfFile()
+                fileHandle.write(data)
+                fileHandle.closeFile()
+                print("Created successfully")
+            }
+        } else {
+            try! data.write(to: fileurl, options: Data.WritingOptions.atomic)
+        }
     }
 
 }

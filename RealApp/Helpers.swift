@@ -35,6 +35,18 @@ class Helpers {
             print("date: \(log.date) data: \(log.stringData)")
         }
     }
+    
+    static func getStringFromData(logs: [LogData]) -> String {
+        
+        var stringAux = ""
+        
+        for log in logs {
+            stringAux += "\(log.date);\(log.stringData)\n"
+        }
+        
+        return stringAux
+        
+    }
 }
 
 

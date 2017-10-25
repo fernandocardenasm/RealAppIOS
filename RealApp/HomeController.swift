@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
     
     var people: [Person] = [Person()]
     
@@ -29,6 +29,13 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         navigationItem.title = "Hallo"
         
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
+        lpgr.minimumPressDuration = 2
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        collectionView?.addGestureRecognizer(lpgr)
+        
+        
 //        loadSampleLogs()
 //        saveLogs()
         
@@ -38,12 +45,43 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
     }
     
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizerState.began {
+            return
+        }
+        print("Starts here-----------------------------------")
+        print(Helpers.getStringFromData(logs: logs))
+        
+        
+        //            let p = gestureReconizer.location(in: self.collectionView)
+        //            let indexPath = self.collectionView?.indexPathForItem(at: p)
+        //
+        //            if let index = indexPath {
+        //                _ = self.collectionView?.cellForItem(at: index)
+        //                // do stuff with your cell, for example print the indexPath
+        //                print("Row: \(index.row)")
+        //
+        //                //            if isAFriend(other: people[(indexPath?.item)!]) {
+        //                //                let i = personSelected?.listFriends.index(of: people[(indexPath?.item)!].userId)
+        //                //                personSelected?.listFriends.remove(at: i!)
+        //                //            }
+        //                //            else {
+        //                //                personSelected?.listFriends.append(people[(indexPath?.item)!].userId)
+        //                //            }
+        //                //            collectionView?.reloadData()
+        //
+        //            } else {
+        //                print("Could not find index path")
+        //            }
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         
         if let savedLogs = Helpers.loadLogs() {
             logs = savedLogs
         }
-        Helpers.printLogs(logs: logs)
+//        Helpers.printLogs(logs: logs)
     }
     
     func showListController(person: Person, index: Int){

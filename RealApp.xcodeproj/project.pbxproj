@@ -20,6 +20,9 @@
 		EDAFFBE11F93D68100161B00 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE01F93D68100161B00 /* ListController.swift */; };
 		EDAFFBE31F93F7D200161B00 /* DigitalSelfController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */; };
 		EDAFFBE51F93F92800161B00 /* DigitalSelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */; };
+		EDECB9131FA0912700BC7485 /* log.txt in Sources */ = {isa = PBXBuildFile; fileRef = EDECB9121FA0912700BC7485 /* log.txt */; };
+		EDECB9151FA0963100BC7485 /* PersistenceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECB9141FA0963100BC7485 /* PersistenceData.swift */; };
+		EDECB9171FA0BAC700BC7485 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECB9161FA0BAC700BC7485 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		EDAFFBE01F93D68100161B00 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSelfController.swift; sourceTree = "<group>"; };
 		EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSelfCell.swift; sourceTree = "<group>"; };
+		EDECB9121FA0912700BC7485 /* log.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = log.txt; sourceTree = "<group>"; };
+		EDECB9141FA0963100BC7485 /* PersistenceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceData.swift; sourceTree = "<group>"; };
+		EDECB9161FA0BAC700BC7485 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,9 @@
 				EDAFFBE01F93D68100161B00 /* ListController.swift */,
 				EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */,
 				EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */,
+				EDECB9121FA0912700BC7485 /* log.txt */,
+				EDECB9141FA0963100BC7485 /* PersistenceData.swift */,
+				EDECB9161FA0BAC700BC7485 /* Helpers.swift */,
 			);
 			path = RealApp;
 			sourceTree = "<group>";
@@ -158,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED35F0251F6EC1F600FA68A5 /* PersonCell.swift in Sources */,
+				EDECB9151FA0963100BC7485 /* PersistenceData.swift in Sources */,
 				EDAFFBE11F93D68100161B00 /* ListController.swift in Sources */,
 				ED35F00E1F6EBA9F00FA68A5 /* HomeController.swift in Sources */,
 				EDAFFBE31F93F7D200161B00 /* DigitalSelfController.swift in Sources */,
@@ -168,6 +178,8 @@
 				EDAFFBE51F93F92800161B00 /* DigitalSelfCell.swift in Sources */,
 				ED35F0211F6EBE9300FA68A5 /* Person.swift in Sources */,
 				ED35F0141F6EBA9F00FA68A5 /* RealApp.xcdatamodeld in Sources */,
+				EDECB9131FA0912700BC7485 /* log.txt in Sources */,
+				EDECB9171FA0BAC700BC7485 /* Helpers.swift in Sources */,
 				ED88D32E1F93C00600FC4547 /* SeedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -270,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -282,7 +294,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZXBK6BD56X;
 				INFOPLIST_FILE = RealApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = M.RealApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,7 +309,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZXBK6BD56X;
 				INFOPLIST_FILE = RealApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = M.RealApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

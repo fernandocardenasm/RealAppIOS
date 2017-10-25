@@ -15,10 +15,21 @@ class DigitalSelfController: UICollectionViewController, UICollectionViewDelegat
     var personSelected: Person?
     var digitalSelected: Person?
     
+    var logs = [LogData]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView?.register(DigitalSelfCell.self, forCellWithReuseIdentifier: digitalCellId)
+        
+        if let savedLogs = Helpers.loadLogs() {
+            logs = savedLogs
+        }
+        
+        let stringAux = "User Selected: \(personSelected?.userName ?? "None") Other Selected: \(digitalSelected?.userName ?? "None")"
+        
+        logs.append(LogData(date: Helpers.getCurrentDateTime(), stringData: stringAux)!)
+        Helpers.saveLogs(logs: logs)
     
     }
     
@@ -49,7 +60,6 @@ class DigitalSelfController: UICollectionViewController, UICollectionViewDelegat
         else {
             cell.digitalImage = digitalSelected?.imageSelf
         }
-        
         
         return cell
     }

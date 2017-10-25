@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import os.log
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var people: [Person] = [Person()]
+    
+    var logs = [LogData]()
     
     let personCellId = "personCellId"
 
@@ -26,9 +29,22 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         navigationItem.title = "Hallo"
         
+//        loadSampleLogs()
+//        saveLogs()
+        
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MMM d, yyyy" //Your New Date format as per requirement change it own
+//        let newDate = dateFormatter.string(from: date)
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if let savedLogs = Helpers.loadLogs() {
+            logs = savedLogs
+        }
+        Helpers.printLogs(logs: logs)
+    }
     
     func showListController(person: Person, index: Int){
         
@@ -67,6 +83,22 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         showListController(person: people[indexPath.item], index: indexPath.item)
         
     }
+    
+    //MARK: Private Methods
+    
+//    private func loadSampleLogs() {
+//
+//        guard let logdata1 = LogData(date: "June", stringData: "Maria") else {
+//            fatalError("Unable to instantiate meal1")
+//        }
+//
+//        guard let logdata2 = LogData(date: "August", stringData: "Rocio") else {
+//            fatalError("Unable to instantiate meal2")
+//        }
+//
+//        logs += [logdata1, logdata2]
+//    }
+    
 
 }
 

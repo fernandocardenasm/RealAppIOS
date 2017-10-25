@@ -16,6 +16,8 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var personSelected: Person?
     var indexPersonSelected: Int?
     
+    var logs = [LogData]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +35,15 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         lpgr.delegate = self
         collectionView?.addGestureRecognizer(lpgr)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let savedLogs = Helpers.loadLogs() {
+            logs = savedLogs
+        }
+        
+        logs.append(LogData(date: Helpers.getCurrentDateTime(), stringData: "User Selected: \(personSelected?.userName ?? "None")")!)
+        Helpers.saveLogs(logs: logs)
     }
     
     func isAFriend(other: Person) -> Bool{

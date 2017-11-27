@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import Firebase
 
 class ListController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate{
     
@@ -18,6 +19,8 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
     var indexPersonSelected: Int?
     
     var logs = [LogData]()
+    
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,16 +33,38 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         collectionView?.backgroundColor = .white
         
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
+        lpgr.minimumPressDuration = 2
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        collectionView?.addGestureRecognizer(lpgr)
+        
+        ref = Database.database().reference()
         
     }
 
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizerState.began {
+            return
+        }
+        print("Starts here-----------------------------------")
+        
+        let refChild = ref.childByAutoId()
+        
+        let str = "iOS------Final User: \(personSelected?.userName ?? "None"); \(Helpers.getStringFromData(logs: logs))"
+        
+        refChild.setValue(str)
+        
+        // toast with a specific duration and position
+        self.view.makeToast("Your message was sent!", duration: 3.0, position: .center)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         if let savedLogs = Helpers.loadLogs() {
             logs = savedLogs
         }
         
-        logs.append(LogData(date: Helpers.getCurrentDateTime(), stringData: "User Selected: \(personSelected?.userName ?? "None")")!)
+        logs.append(LogData(date: Helpers.getCurrentDateTime(), stringData: ";User Selected: \(personSelected?.userName ?? ";None")")!)
         Helpers.saveLogs(logs: logs)
         
     }

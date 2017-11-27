@@ -26,7 +26,7 @@ class DigitalSelfController: UICollectionViewController, UICollectionViewDelegat
             logs = savedLogs
         }
         
-        let stringAux = "User Selected: \(personSelected?.userName ?? "None");Other Selected: \(digitalSelected?.userName ?? "None")"
+        let stringAux = ";User Selected: \(personSelected?.userName ?? ";None");Other Selected: \(digitalSelected?.userName ?? ";None")"
         
         logs.append(LogData(date: Helpers.getCurrentDateTime(), stringData: stringAux)!)
         Helpers.saveLogs(logs: logs)

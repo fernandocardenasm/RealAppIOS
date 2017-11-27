@@ -41,7 +41,7 @@ class Helpers {
         var stringAux = ""
         
         for log in logs {
-            stringAux += "\(log.date);\(log.stringData)\n"
+            stringAux += " \(log.date);\(log.stringData)"
         }
         
         return stringAux

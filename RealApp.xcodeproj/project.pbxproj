@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FB72535A80FC6DCD8C42ECC /* Pods_RealApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164F97EDA491AC4621648FA4 /* Pods_RealApp.framework */; };
 		ED35F00C1F6EBA9F00FA68A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F00B1F6EBA9F00FA68A5 /* AppDelegate.swift */; };
 		ED35F00E1F6EBA9F00FA68A5 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F00D1F6EBA9F00FA68A5 /* HomeController.swift */; };
 		ED35F0141F6EBA9F00FA68A5 /* RealApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED35F0121F6EBA9F00FA68A5 /* RealApp.xcdatamodeld */; };
@@ -16,6 +17,8 @@
 		ED35F0251F6EC1F600FA68A5 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F0241F6EC1F600FA68A5 /* PersonCell.swift */; };
 		ED35F0271F6EC2B700FA68A5 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F0261F6EC2B700FA68A5 /* BaseCell.swift */; };
 		ED35F0291F6EC57000FA68A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F0281F6EC57000FA68A5 /* Extensions.swift */; };
+		ED819D221FCC1DB90093BF73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED93DD4B1FCC172100460567 /* GoogleService-Info.plist */; };
+		ED819D241FCC249B0093BF73 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED819D231FCC249B0093BF73 /* Toast.swift */; };
 		ED88D32E1F93C00600FC4547 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88D32D1F93C00600FC4547 /* SeedData.swift */; };
 		EDAFFBE11F93D68100161B00 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE01F93D68100161B00 /* ListController.swift */; };
 		EDAFFBE31F93F7D200161B00 /* DigitalSelfController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		164F97EDA491AC4621648FA4 /* Pods_RealApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		278D584B463E9725C2A4DE5A /* Pods-RealApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealApp/Pods-RealApp.release.xcconfig"; sourceTree = "<group>"; };
+		2B932DF61E436E2EA8884164 /* Pods-RealApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealApp/Pods-RealApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ED35F0081F6EBA9F00FA68A5 /* RealApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED35F00B1F6EBA9F00FA68A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED35F00D1F6EBA9F00FA68A5 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -36,7 +42,9 @@
 		ED35F0241F6EC1F600FA68A5 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		ED35F0261F6EC2B700FA68A5 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		ED35F0281F6EC57000FA68A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ED819D231FCC249B0093BF73 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = ../../../../Desktop/Toast.swift; sourceTree = "<group>"; };
 		ED88D32D1F93C00600FC4547 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
+		ED93DD4B1FCC172100460567 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDAFFBE01F93D68100161B00 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSelfController.swift; sourceTree = "<group>"; };
 		EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSelfCell.swift; sourceTree = "<group>"; };
@@ -49,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB72535A80FC6DCD8C42ECC /* Pods_RealApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92C6EEC95281B4C0E91B2C32 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B932DF61E436E2EA8884164 /* Pods-RealApp.debug.xcconfig */,
+				278D584B463E9725C2A4DE5A /* Pods-RealApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E07AAD7A16C4D33E956B4C49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				164F97EDA491AC4621648FA4 /* Pods_RealApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED35EFFF1F6EBA9E00FA68A5 = {
 			isa = PBXGroup;
 			children = (
 				ED35F00A1F6EBA9F00FA68A5 /* RealApp */,
 				ED35F0091F6EBA9F00FA68A5 /* Products */,
+				92C6EEC95281B4C0E91B2C32 /* Pods */,
+				E07AAD7A16C4D33E956B4C49 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +106,7 @@
 				ED35F00D1F6EBA9F00FA68A5 /* HomeController.swift */,
 				ED35F0151F6EBA9F00FA68A5 /* Assets.xcassets */,
 				ED35F01A1F6EBA9F00FA68A5 /* Info.plist */,
+				ED93DD4B1FCC172100460567 /* GoogleService-Info.plist */,
 				ED35F0121F6EBA9F00FA68A5 /* RealApp.xcdatamodeld */,
 				ED35F0201F6EBE9300FA68A5 /* Person.swift */,
 				ED35F0221F6EBF4F00FA68A5 /* Other.swift */,
@@ -90,6 +119,7 @@
 				EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */,
 				EDECB9141FA0963100BC7485 /* PersistenceData.swift */,
 				EDECB9161FA0BAC700BC7485 /* Helpers.swift */,
+				ED819D231FCC249B0093BF73 /* Toast.swift */,
 			);
 			path = RealApp;
 			sourceTree = "<group>";
@@ -101,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED35F01D1F6EBA9F00FA68A5 /* Build configuration list for PBXNativeTarget "RealApp" */;
 			buildPhases = (
+				4641C0E95675D780CB9E268E /* [CP] Check Pods Manifest.lock */,
 				ED35F0041F6EBA9E00FA68A5 /* Sources */,
 				ED35F0051F6EBA9E00FA68A5 /* Frameworks */,
 				ED35F0061F6EBA9E00FA68A5 /* Resources */,
+				579ED7D2A363495DE0832FF3 /* [CP] Embed Pods Frameworks */,
+				28082085FFD8B6C45B33F6F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,10 +186,69 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED35F0161F6EBA9F00FA68A5 /* Assets.xcassets in Resources */,
+				ED819D221FCC1DB90093BF73 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28082085FFD8B6C45B33F6F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RealApp/Pods-RealApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4641C0E95675D780CB9E268E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RealApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		579ED7D2A363495DE0832FF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RealApp/Pods-RealApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RealApp/Pods-RealApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED35F0041F6EBA9E00FA68A5 /* Sources */ = {
@@ -170,6 +262,7 @@
 				EDAFFBE31F93F7D200161B00 /* DigitalSelfController.swift in Sources */,
 				ED35F00C1F6EBA9F00FA68A5 /* AppDelegate.swift in Sources */,
 				ED35F0291F6EC57000FA68A5 /* Extensions.swift in Sources */,
+				ED819D241FCC249B0093BF73 /* Toast.swift in Sources */,
 				ED35F0231F6EBF4F00FA68A5 /* Other.swift in Sources */,
 				ED35F0271F6EC2B700FA68A5 /* BaseCell.swift in Sources */,
 				EDAFFBE51F93F92800161B00 /* DigitalSelfCell.swift in Sources */,
@@ -288,6 +381,7 @@
 		};
 		ED35F01E1F6EBA9F00FA68A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B932DF61E436E2EA8884164 /* Pods-RealApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZXBK6BD56X;
@@ -303,6 +397,7 @@
 		};
 		ED35F01F1F6EBA9F00FA68A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 278D584B463E9725C2A4DE5A /* Pods-RealApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZXBK6BD56X;

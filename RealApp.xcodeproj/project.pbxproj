@@ -17,12 +17,12 @@
 		ED35F0251F6EC1F600FA68A5 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F0241F6EC1F600FA68A5 /* PersonCell.swift */; };
 		ED35F0271F6EC2B700FA68A5 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F0261F6EC2B700FA68A5 /* BaseCell.swift */; };
 		ED35F0291F6EC57000FA68A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F0281F6EC57000FA68A5 /* Extensions.swift */; };
-		ED819D221FCC1DB90093BF73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED93DD4B1FCC172100460567 /* GoogleService-Info.plist */; };
-		ED819D241FCC249B0093BF73 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED819D231FCC249B0093BF73 /* Toast.swift */; };
 		ED88D32E1F93C00600FC4547 /* SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88D32D1F93C00600FC4547 /* SeedData.swift */; };
 		EDAFFBE11F93D68100161B00 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE01F93D68100161B00 /* ListController.swift */; };
 		EDAFFBE31F93F7D200161B00 /* DigitalSelfController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */; };
 		EDAFFBE51F93F92800161B00 /* DigitalSelfCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */; };
+		EDD2B7B7202A344E0075CFD4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDD2B7B6202A344D0075CFD4 /* GoogleService-Info.plist */; };
+		EDD2B7B9202A35830075CFD4 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD2B7B8202A35830075CFD4 /* Toast.swift */; };
 		EDECB9151FA0963100BC7485 /* PersistenceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECB9141FA0963100BC7485 /* PersistenceData.swift */; };
 		EDECB9171FA0BAC700BC7485 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDECB9161FA0BAC700BC7485 /* Helpers.swift */; };
 /* End PBXBuildFile section */
@@ -42,12 +42,12 @@
 		ED35F0241F6EC1F600FA68A5 /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		ED35F0261F6EC2B700FA68A5 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		ED35F0281F6EC57000FA68A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		ED819D231FCC249B0093BF73 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = ../../../../Desktop/Toast.swift; sourceTree = "<group>"; };
 		ED88D32D1F93C00600FC4547 /* SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedData.swift; sourceTree = "<group>"; };
-		ED93DD4B1FCC172100460567 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EDAFFBE01F93D68100161B00 /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		EDAFFBE21F93F7D200161B00 /* DigitalSelfController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSelfController.swift; sourceTree = "<group>"; };
 		EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSelfCell.swift; sourceTree = "<group>"; };
+		EDD2B7B6202A344D0075CFD4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Keep-it-simple/Keep-it-Simple/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EDD2B7B8202A35830075CFD4 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		EDECB9141FA0963100BC7485 /* PersistenceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceData.swift; sourceTree = "<group>"; };
 		EDECB9161FA0BAC700BC7485 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +106,7 @@
 				ED35F00D1F6EBA9F00FA68A5 /* HomeController.swift */,
 				ED35F0151F6EBA9F00FA68A5 /* Assets.xcassets */,
 				ED35F01A1F6EBA9F00FA68A5 /* Info.plist */,
-				ED93DD4B1FCC172100460567 /* GoogleService-Info.plist */,
+				EDD2B7B6202A344D0075CFD4 /* GoogleService-Info.plist */,
 				ED35F0121F6EBA9F00FA68A5 /* RealApp.xcdatamodeld */,
 				ED35F0201F6EBE9300FA68A5 /* Person.swift */,
 				ED35F0221F6EBF4F00FA68A5 /* Other.swift */,
@@ -119,7 +119,7 @@
 				EDAFFBE41F93F92800161B00 /* DigitalSelfCell.swift */,
 				EDECB9141FA0963100BC7485 /* PersistenceData.swift */,
 				EDECB9161FA0BAC700BC7485 /* Helpers.swift */,
-				ED819D231FCC249B0093BF73 /* Toast.swift */,
+				EDD2B7B8202A35830075CFD4 /* Toast.swift */,
 			);
 			path = RealApp;
 			sourceTree = "<group>";
@@ -186,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED35F0161F6EBA9F00FA68A5 /* Assets.xcassets in Resources */,
-				ED819D221FCC1DB90093BF73 /* GoogleService-Info.plist in Resources */,
+				EDD2B7B7202A344E0075CFD4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,13 +256,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED35F0251F6EC1F600FA68A5 /* PersonCell.swift in Sources */,
+				EDD2B7B9202A35830075CFD4 /* Toast.swift in Sources */,
 				EDECB9151FA0963100BC7485 /* PersistenceData.swift in Sources */,
 				EDAFFBE11F93D68100161B00 /* ListController.swift in Sources */,
 				ED35F00E1F6EBA9F00FA68A5 /* HomeController.swift in Sources */,
 				EDAFFBE31F93F7D200161B00 /* DigitalSelfController.swift in Sources */,
 				ED35F00C1F6EBA9F00FA68A5 /* AppDelegate.swift in Sources */,
 				ED35F0291F6EC57000FA68A5 /* Extensions.swift in Sources */,
-				ED819D241FCC249B0093BF73 /* Toast.swift in Sources */,
 				ED35F0231F6EBF4F00FA68A5 /* Other.swift in Sources */,
 				ED35F0271F6EC2B700FA68A5 /* BaseCell.swift in Sources */,
 				EDAFFBE51F93F92800161B00 /* DigitalSelfCell.swift in Sources */,

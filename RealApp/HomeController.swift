@@ -24,10 +24,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         people = SeedData.seedData()
         
         collectionView?.backgroundColor = .white
+        self.navigationItem.title = "Who are you?"
+        
         
         collectionView?.register(PersonCell.self, forCellWithReuseIdentifier: personCellId)
-        
-        navigationItem.title = "Hallo"
         
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureReconizer:)))
         lpgr.minimumPressDuration = 2

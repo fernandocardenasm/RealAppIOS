@@ -23,18 +23,21 @@ class PersonCell:BaseCell {
         }
     }
     
-    var isFriend: Bool? {
+    var type: String? {
         didSet {
-            if let friend = isFriend {
-                if friend {
+            if let type = type {
+                if type == "friend" {
                     otherName.backgroundColor = .yellow
                 }
-                else {
-                    otherName.backgroundColor = .blue
+                else if type == "itself" {
+                    otherName.backgroundColor = .green
+                    otherName.font = .boldSystemFont(ofSize: 16)
+                    otherName.text = "Show them yourself ;)"
                 }
             }
         }
     }
+    
     
     var otherImage:UIImageView = {
         
@@ -49,8 +52,11 @@ class PersonCell:BaseCell {
     let otherName:UITextView = {
         
         let nameView = UITextView()
-        nameView.backgroundColor = .blue
+//        nameView.backgroundColor = .blue
         nameView.text = "Alejandra"
+        
+        nameView.textAlignment = .center
+        nameView.font = .boldSystemFont(ofSize: 24)
         
         return nameView
         
@@ -63,7 +69,7 @@ class PersonCell:BaseCell {
         addConstrainstWithFormat("H:|[v0]|", views: otherImage)
         addConstrainstWithFormat("H:|[v0]|", views: otherName)
         
-        addConstrainstWithFormat("V:|-14-[v0]-8-[v1(30)]|", views: otherImage, otherName)
+        addConstrainstWithFormat("V:|-14-[v0]-8-[v1(36)]|", views: otherImage, otherName)
         
 //        addConstrainstWithFormat("V:|-16-[v0(30)]-8-[v1(44)]-16-|", views: otherImage, otherName)
         

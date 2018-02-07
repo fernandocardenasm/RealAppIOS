@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8FB72535A80FC6DCD8C42ECC /* Pods_RealApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164F97EDA491AC4621648FA4 /* Pods_RealApp.framework */; };
+		ED1D60F3202A830D00004ED3 /* ImageDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D60F2202A830C00004ED3 /* ImageDetailController.swift */; };
 		ED35F00C1F6EBA9F00FA68A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F00B1F6EBA9F00FA68A5 /* AppDelegate.swift */; };
 		ED35F00E1F6EBA9F00FA68A5 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED35F00D1F6EBA9F00FA68A5 /* HomeController.swift */; };
 		ED35F0141F6EBA9F00FA68A5 /* RealApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED35F0121F6EBA9F00FA68A5 /* RealApp.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 		164F97EDA491AC4621648FA4 /* Pods_RealApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		278D584B463E9725C2A4DE5A /* Pods-RealApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealApp/Pods-RealApp.release.xcconfig"; sourceTree = "<group>"; };
 		2B932DF61E436E2EA8884164 /* Pods-RealApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealApp/Pods-RealApp.debug.xcconfig"; sourceTree = "<group>"; };
+		ED1D60F2202A830C00004ED3 /* ImageDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailController.swift; sourceTree = "<group>"; };
 		ED35F0081F6EBA9F00FA68A5 /* RealApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED35F00B1F6EBA9F00FA68A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED35F00D1F6EBA9F00FA68A5 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				EDECB9141FA0963100BC7485 /* PersistenceData.swift */,
 				EDECB9161FA0BAC700BC7485 /* Helpers.swift */,
 				EDD2B7B8202A35830075CFD4 /* Toast.swift */,
+				ED1D60F2202A830C00004ED3 /* ImageDetailController.swift */,
 			);
 			path = RealApp;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1D60F3202A830D00004ED3 /* ImageDetailController.swift in Sources */,
 				ED35F0251F6EC1F600FA68A5 /* PersonCell.swift in Sources */,
 				EDD2B7B9202A35830075CFD4 /* Toast.swift in Sources */,
 				EDECB9151FA0963100BC7485 /* PersistenceData.swift in Sources */,

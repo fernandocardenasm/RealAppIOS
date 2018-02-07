@@ -22,6 +22,20 @@ class DigitalSelfController: UICollectionViewController, UICollectionViewDelegat
         
         collectionView?.register(DigitalSelfCell.self, forCellWithReuseIdentifier: digitalCellId)
         
+        collectionView?.backgroundColor = .white
+        
+        
+        
+        if personSelected?.userId == digitalSelected?.userId {
+            self.navigationItem.title = "Show them my"
+        }
+        else {
+            self.navigationItem.title = "See more from"
+        }
+    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if let savedLogs = Helpers.loadLogs() {
             logs = savedLogs
         }
@@ -30,8 +44,18 @@ class DigitalSelfController: UICollectionViewController, UICollectionViewDelegat
         
         logs.append(LogData(date: Helpers.getCurrentDateTime(), stringData: stringAux)!)
         Helpers.saveLogs(logs: logs)
-    
+        
     }
+    
+    func showImageDetail(imageSelected: String, imageName: String){
+        let controller = ImageDetailController()
+        controller.personSelected = personSelected
+        controller.digitalSelected = digitalSelected
+        controller.imageSelected = imageSelected
+        controller.imageName = imageName
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     
     func isAFriend() -> Bool{
         return (personSelected?.listFriends.contains((digitalSelected?.userId)!))!
@@ -39,26 +63,40 @@ class DigitalSelfController: UICollectionViewController, UICollectionViewDelegat
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if isAFriend() {
-            return 2
+        if personSelected?.userId == digitalSelected?.userId {
+            return 1
         }
-        return 1
+        else {
+            if isAFriend() {
+                return 2
+            }
+            return 1
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: digitalCellId, for: indexPath) as! DigitalSelfCell
         
-        if isAFriend(){
-            if indexPath.item == 0 {
-                cell.digitalImage = digitalSelected?.imageFriend
+        if personSelected?.userId == digitalSelected?.userId {
+            cell.digitalImage = digitalSelected?.imageFriend
+            cell.imageDes = "Personal Updates"
+        }
+        else {
+            if isAFriend(){
+                if indexPath.item == 0 {
+                    cell.digitalImage = digitalSelected?.imageSelf
+                    cell.imageDes = "Digital Self"
+                }
+                else {
+                    cell.digitalImage = digitalSelected?.imageFriend
+                    cell.imageDes = "Personal Updates"
+                }
             }
             else {
                 cell.digitalImage = digitalSelected?.imageSelf
+                cell.imageDes = "Digital Self"
             }
-        }
-        else {
-            cell.digitalImage = digitalSelected?.imageSelf
         }
         
         return cell
@@ -66,7 +104,30 @@ class DigitalSelfController: UICollectionViewController, UICollectionViewDelegat
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height - 50)
+        return CGSize(width: (view.frame.width/2) - 20, height: (view.frame.width/2) - 20)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if personSelected?.userId == digitalSelected?.userId {
+            showImageDetail(imageSelected: "Personal Updates", imageName: (digitalSelected?.imageFriend)! )
+        }
+        else {
+            if isAFriend(){
+                if indexPath.item == 0 {
+                    showImageDetail(imageSelected: "Digital Self", imageName: (digitalSelected?.imageSelf)!)
+                }
+                else {
+                    showImageDetail(imageSelected: "Personal Updates", imageName: (digitalSelected?.imageFriend)!)
+                }
+            }
+            else {
+                showImageDetail(imageSelected: "Digital Self", imageName: (digitalSelected?.imageSelf)!)
+            }
+        }
+        
+        
+    }
+    
     
 }

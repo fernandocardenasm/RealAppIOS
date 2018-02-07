@@ -20,14 +20,27 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     var logs = [LogData]()
     
+    var isAlone = false
+    
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "I would like to see more from"
+        
         people = SeedData.seedData()
         
-        people.remove(at: indexPersonSelected!)
+        if let isAlone = personSelected?.listFriends.contains("0") {
+            if !isAlone {
+                people.remove(at: indexPersonSelected!)
+                self.isAlone = false
+            }
+            else {
+                self.isAlone = true
+            }
+        }
+        
         
         collectionView?.register(PersonCell.self, forCellWithReuseIdentifier: personCellId)
         
@@ -92,14 +105,16 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personCellId, for: indexPath) as! PersonCell
         
+        cell.person = people[indexPath.item]
+        
         if isAFriend(other: people[indexPath.item]) {
-            cell.isFriend = true
+            cell.type = "friend"
         }
         else{
-            cell.isFriend = false
+            if self.isAlone && people[indexPath.item].userId == personSelected?.userId {
+                cell.type = "itself"
+            }
         }
-        
-        cell.person = people[indexPath.item]
         
         return cell
     }

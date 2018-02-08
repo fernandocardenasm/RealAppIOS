@@ -31,7 +31,7 @@ class PersonCell:BaseCell {
                 }
                 else if type == "itself" {
                     otherName.backgroundColor = .green
-                    otherName.font = .boldSystemFont(ofSize: 16)
+                    otherName.font = .boldSystemFont(ofSize: 12)
                     otherName.text = "Show them yourself ;)"
                 }
             }
@@ -42,7 +42,6 @@ class PersonCell:BaseCell {
     var otherImage:UIImageView = {
         
         let imageView = UIImageView()
-        
         imageView.backgroundColor = .yellow
         
         return imageView

@@ -35,13 +35,13 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         lpgr.delegate = self
         collectionView?.addGestureRecognizer(lpgr)
         
-        
 //        loadSampleLogs()
 //        saveLogs()
         
 //        let dateFormatter = DateFormatter()
 //        dateFormatter.dateFormat = "MMM d, yyyy" //Your New Date format as per requirement change it own
 //        let newDate = dateFormatter.string(from: date)
+        
         
     }
     
@@ -81,7 +81,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         if let savedLogs = Helpers.loadLogs() {
             logs = savedLogs
         }
-//        Helpers.printLogs(logs: logs)
+        Helpers.printLogs(logs: logs)
     }
     
     func showListController(person: Person, index: Int){
@@ -118,7 +118,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        showListController(person: people[indexPath.item], index: indexPath.item)
+        let alert = UIAlertController(title: "Are you \(people[indexPath.item].userName)?", message: "It's recommended that you select only yourself.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            self.showListController(person: self.people[indexPath.item], index: indexPath.item)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true)
+    
         
     }
     

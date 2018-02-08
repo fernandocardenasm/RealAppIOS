@@ -33,7 +33,7 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         if let isAlone = personSelected?.listFriends.contains("0") {
             if !isAlone {
-                people.remove(at: indexPersonSelected!)
+                //people.remove(at: indexPersonSelected!)
                 self.isAlone = false
             }
             else {
@@ -111,7 +111,7 @@ class ListController: UICollectionViewController, UICollectionViewDelegateFlowLa
             cell.type = "friend"
         }
         else{
-            if self.isAlone && people[indexPath.item].userId == personSelected?.userId {
+            if people[indexPath.item].userId == personSelected?.userId {
                 cell.type = "itself"
             }
         }

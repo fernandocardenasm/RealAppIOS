@@ -24,7 +24,7 @@ class DigitalSelfCell:BaseCell {
         didSet{
             if let imageDes = imageDes {
                 imageDescription.text = imageDes
-                imageDescription.font = .boldSystemFont(ofSize: 16)
+                imageDescription.font = .boldSystemFont(ofSize: 12)
             }
         }
     }
@@ -50,7 +50,7 @@ class DigitalSelfCell:BaseCell {
         textView.text = "Alejandra"
         
         textView.textAlignment = .center
-        textView.font = .boldSystemFont(ofSize: 24)
+        textView.font = .boldSystemFont(ofSize: 18)
         
         return textView
         
